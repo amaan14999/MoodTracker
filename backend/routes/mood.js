@@ -29,7 +29,7 @@ router.get("/mood", async (req, res) => {
       const mood = await Mood.findById(id);
 
       if (mood) {
-        console.log(mood.date.toISOString());
+        // console.log(mood.date.toISOString());
         res.status(200).json({ mood: mood });
       } else {
         res.status(404).json({ error: "Mood not found" });
