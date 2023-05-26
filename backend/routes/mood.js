@@ -22,20 +22,21 @@ router.post("/mood", async (req, res) => {
 });
 
 router.get("/mood", async (req, res) => {
-  const { date } = req.query;
+  const { id } = req.query;
 
   try {
-    let moods;
+    if (id) {
+      const mood = await Mood.findById(id);
 
-    if (date) {
-      moods = await Mood.find({
-        date: { $gte: new Date(date), $lt: new Date(date) },
-      });
+      if (mood) {
+        console.log(mood.date.toISOString());
+        res.status(200).json({ mood: mood });
+      } else {
+        res.status(404).json({ error: "Mood not found" });
+      }
     } else {
-      moods = await Mood.find();
+      res.status(400).json({ error: "ID is required" });
     }
-
-    res.status(200).json({ moods: moods });
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: "Server error" });
