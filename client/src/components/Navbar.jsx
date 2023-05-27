@@ -10,15 +10,19 @@ function Navbar() {
     <React.Fragment>
       <Box sx={theme.navbar}>
         <Box>
-          <Box>Logo</Box>
+          <Box sx={theme.button.navBtn}>F.</Box>
         </Box>
 
         <Box sx={theme.display.flexDisplayRow}>
-          <Button variant="text" sx={theme.button.navBtn}>
-            Item 1
+          <Button variant="text" sx={theme.button.navBtn} disableRipple>
+            Home
           </Button>
-          <Button variant="text" sx={theme.button.navBtn}>Item 2</Button>
-          <Button variant="text">Item 3</Button>
+          <Button variant="text" sx={theme.button.navBtn} disableRipple>
+            Features
+          </Button>
+          <Button variant="text" sx={theme.button.logBtn} disableRipple>
+            Login
+          </Button>
         </Box>
       </Box>
     </React.Fragment>
