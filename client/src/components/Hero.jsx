@@ -2,6 +2,9 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import Button from "./Btn";
+import Calendar from "./Calendar";
+import Mood from "./Mood";
+import Analyse from "./Analyse";
 
 function Hero() {
   const theme = useTheme();
@@ -34,6 +37,11 @@ function Hero() {
         <Box>
           <Button />
         </Box>
+      </Box>
+      <Box>
+        <Calendar />
+        <Mood />
+        <Analyse />
       </Box>
     </React.Fragment>
   );
