@@ -8,6 +8,8 @@ import "./App.css";
 import Navbar from "./components/navbar";
 import Hero from "./components/Hero";
 import Welcome from "./components/Mood/Welcome";
+import Footer from "./components/Footer";
+
 function App() {
   return (
     <React.Fragment>
@@ -21,6 +23,8 @@ function App() {
               <Route path="/" element={<Hero />} />
               <Route path="/mood" element={<Welcome />} />
             </Routes>
+
+            <Footer />
           </Container>
         </ThemeProvider>
       </BrowserRouter>

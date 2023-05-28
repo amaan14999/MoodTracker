@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Modal, Button } from "antd";
 import { Box, Typography } from "@mui/material";
 import Modalweb from "./Mood/Modal";
-
 import { useTheme } from "@emotion/react";
 
 const Tile = ({ index }) => {
@@ -32,16 +31,11 @@ const Tile = ({ index }) => {
   };
 
   const handleCloseModal = () => {
-    setModalVisible(false);
+    setModalVisible(false); // Set modalVisible state to false to close the modal
   };
 
   const handleOk = () => {
     console.log("OK button clicked");
-    handleCloseModal();
-  };
-
-  const handleCancel = () => {
-    console.log("Cancel button clicked");
     handleCloseModal();
   };
 
@@ -56,12 +50,12 @@ const Tile = ({ index }) => {
       {hovered && <span className="date">{getDate(index)}</span>}
       <Modal
         title={getDate(index)}
-        visible={modalVisible}
+        visible={modalVisible} // Use "visible" instead of "open"
         onOk={handleOk}
         okText="Edit Details"
-        onCancel={handleCancel}
+        onCancel={handleCloseModal} // Use "handleCloseModal" instead of "handleCancel"
         footer={[
-          <Button key="cancel" onClick={handleCancel}>
+          <Button key="cancel" onClick={handleCloseModal}>
             Cancel
           </Button>,
           <Modalweb closeModal={handleCloseModal} key="edit" />,
