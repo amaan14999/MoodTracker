@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Bar, CategoryScale, LinearScale, Chart } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
+import {
+  Chart,
+  CategoryScale,
+  LinearScale,
+  BarController,
+  BarElement,
+} from "chart.js";
+
+Chart.register(CategoryScale, LinearScale, BarController, BarElement);
 
 const MoodStats = () => {
   const [moods, setMoods] = useState([]);
-
-  Chart.register(CategoryScale, LinearScale);
 
   useEffect(() => {
     fetchData();
@@ -82,9 +89,6 @@ const MoodStats = () => {
               },
               legend: {
                 display: false,
-                // position: "top",
-                // align: "center",
-                // justify: "center",
               },
             },
           }}

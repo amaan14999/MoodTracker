@@ -2,12 +2,23 @@ import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Button } from "@mui/material";
 import { useTheme } from "@emotion/react";
-import Profile from "./Profile";
+// import { useNavigate } from "react-router-dom";
 
 const LoginButton = () => {
   const theme = useTheme();
 
-  const { loginWithRedirect } = useAuth0();
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
+  // const navigate = useNavigate();
+
+  const handleLogin = () => {
+    loginWithRedirect();
+  };
+
+  // React.useEffect(() => {
+  //   if (isAuthenticated) {
+  //     navigate("/mood");
+  //   }
+  // }, [isAuthenticated, navigate]);
 
   return (
     <React.Fragment>
@@ -16,12 +27,7 @@ const LoginButton = () => {
         sx={theme.button.logBtn}
         disableRipple
         disableElevation
-        onClick={() =>
-          loginWithRedirect({
-            screen_hint: "signup",
-            appState: { targetUrl: "/mood" },
-          })
-        }
+        onClick={handleLogin}
       >
         Log In
       </Button>
