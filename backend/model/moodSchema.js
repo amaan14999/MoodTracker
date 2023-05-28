@@ -11,12 +11,10 @@ const moodSchema = new mongoose.Schema({
   },
   note: {
     type: String,
-  }
-  // journal: {
-  //   type: String,
-  // },
+  },
 });
 
+// Define the 'Mood' model based on the 'moodSchema'
 const Mood = mongoose.model("Mood", moodSchema);
 
 module.exports = Mood;

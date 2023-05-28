@@ -8,10 +8,20 @@ function Btn() {
   return (
     <React.Fragment>
       <Box sx={theme.display.flexDisplayRow}>
-        <Button variant="contained" sx={theme.button.featuresBtn} disableRipple>
+        <Button
+          variant="contained"
+          sx={theme.button.featuresBtn}
+          disableRipple
+          disableElevation
+        >
           Features
         </Button>
-        <Button variant="outlined" sx={theme.button.signupBtn} disableRipple>
+        <Button
+          variant="outlined"
+          sx={theme.button.signupBtn}
+          disableRipple
+          disableElevation
+        >
           Sign Up
         </Button>
       </Box>

@@ -8,6 +8,10 @@ dotenv.config({ path: ".env" });
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const cors = require("cors");
+
+app.use(cors({ origin: true, credentials: true }));
+
 // const config = {
 //   authRequired: false,
 //   auth0Logout: true,

@@ -1,4 +1,8 @@
 import { createTheme } from "@mui/material/styles";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
 
 const theme = createTheme({
   palette: {
@@ -14,24 +18,24 @@ const theme = createTheme({
   },
   typography: {
     fontSize: 16,
-    fontFamily: "DM Sans",
+    fontFamily: "Roboto,sans-serif",
     h3: {
       fontWeight: 700,
       fontSize: "2.2rem",
-      fontFamily: "DM Sans",
+      fontFamily: "Roboto,sans-serif",
     },
     h4: {
       fontWeight: 700,
       fontSize: "1.75rem",
-      fontFamily: "DM Sans",
+      fontFamily: "Roboto,sans-serif",
     },
     h5: {
       fontWeight: 500,
-      fontFamily: "DM Sans",
+      fontFamily: "Roboto,sans-serif",
     },
     h6: {
       fontWeight: 500,
-      fontFamily: "DM Sans",
+      fontFamily: "Roboto,sans-serif",
     },
   },
   components: {
@@ -39,7 +43,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           textTransform: "none",
-          fontFamily: "DM Sans",
+          fontFamily: "Roboto,sans-serif",
         },
       },
     },
@@ -57,7 +61,7 @@ const theme = createTheme({
               borderColor: "#ccc",
             },
           },
-          fontFamily: "DM Sans",
+          fontFamily: "Roboto,sans-serif",
         },
       },
     },
@@ -84,7 +88,10 @@ const theme = createTheme({
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
-      minHeight: "100vh",
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%,-50%)",
     },
   },
 
@@ -139,13 +146,36 @@ const theme = createTheme({
     },
   },
 
-  // center: {
-  //   position: "absolute",
-  //   top: "50%",
-  //   left: "50%",
-  //   transform: "translate(-50%,-50%)",
-  //   textAlign: "center",
-  // },
+  moodPage: {
+    welcome: {
+      background: "#fff",
+      border: "none",
+      borderRadius: "10px",
+      boxShadow: "0 0 10px 0 rgba(0,0,0,0.2)",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      padding: "2rem",
+      marginTop: "3rem",
+    },
+    moodBtnBox: {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "center",
+      alignItems: "center",
+      gap: "1rem",
+    },
+    moodBtn: {
+      border: "none",
+      borderColor: "none",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-evenly",
+      alignItems: "center",
+      marginTop: "1rem",
+    },
+  },
 });
 
 export default theme;

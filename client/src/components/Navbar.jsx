@@ -2,9 +2,13 @@ import React from "react";
 import { Box } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { Button } from "@mui/material";
+import LoginButton from "./Auth/LoginButton";
+import LogoutButton from "./Auth/LogoutButton";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Navbar() {
   const theme = useTheme();
+  const { user, isAuthenticated, isLoading } = useAuth0();
 
   return (
     <React.Fragment>
@@ -14,15 +18,31 @@ function Navbar() {
         </Box>
 
         <Box sx={theme.display.flexDisplayRow}>
-          <Button variant="text" sx={theme.button.navBtn} disableRipple>
+          <Button
+            variant="text"
+            sx={theme.button.navBtn}
+            disableRipple
+            disableElevation
+          >
             Home
           </Button>
-          <Button variant="text" sx={theme.button.navBtn} disableRipple>
+          <Button
+            variant="text"
+            sx={theme.button.navBtn}
+            disableRipple
+            disableElevation
+          >
             Features
           </Button>
-          <Button variant="text" sx={theme.button.logBtn} disableRipple>
-            Login
-          </Button>
+          {isAuthenticated ? (
+            <>
+              <LogoutButton />
+            </>
+          ) : (
+            <>
+              <LoginButton />
+            </>
+          )}
         </Box>
       </Box>
     </React.Fragment>
