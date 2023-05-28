@@ -4,9 +4,12 @@ import { Box, Typography, Button } from "@mui/material";
 import Stats from "./Stats";
 import WeeklyChart from "./WeeklyChart";
 import Modal from "./Modal";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Welcome() {
   const theme = useTheme();
+
+  const { user } = useAuth0();
 
   return (
     <React.Fragment>
@@ -20,7 +23,6 @@ function Welcome() {
             <Modal />
           </Box>
         </Box>
-
         <Stats />
         <WeeklyChart />
       </Box>

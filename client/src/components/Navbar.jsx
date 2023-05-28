@@ -5,10 +5,11 @@ import { Button } from "@mui/material";
 import LoginButton from "./Auth/LoginButton";
 import LogoutButton from "./Auth/LogoutButton";
 import { useAuth0 } from "@auth0/auth0-react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const theme = useTheme();
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { isAuthenticated } = useAuth0();
 
   return (
     <React.Fragment>
@@ -24,16 +25,11 @@ function Navbar() {
             disableRipple
             disableElevation
           >
-            Home
+            <Link to="/" style={{ textDecoration: "none", color: "#2b3467" }}>
+              Home
+            </Link>
           </Button>
-          <Button
-            variant="text"
-            sx={theme.button.navBtn}
-            disableRipple
-            disableElevation
-          >
-            Features
-          </Button>
+
           {isAuthenticated ? (
             <>
               <LogoutButton />

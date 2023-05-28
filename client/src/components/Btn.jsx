@@ -1,9 +1,18 @@
 import React from "react";
 import { Button, Box } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import LoginButton from "./Auth/LoginButton";
+import { useAuth0 } from "@auth0/auth0-react";
+import { Link } from "react-router-dom";
 
 function Btn() {
   const theme = useTheme();
+
+  const { isAuthenticated } = useAuth0();
+
+  const scrollToFeatures = () => {
+    window.scrollTo(0, window.innerHeight);
+  };
 
   return (
     <React.Fragment>
@@ -13,17 +22,22 @@ function Btn() {
           sx={theme.button.featuresBtn}
           disableRipple
           disableElevation
+          onClick={scrollToFeatures} // Add onClick event handler
         >
           Features
         </Button>
-        <Button
-          variant="outlined"
-          sx={theme.button.signupBtn}
-          disableRipple
-          disableElevation
-        >
-          Sign Up
-        </Button>
+        {isAuthenticated ? (
+          <Button variant="outlined">
+            <Link
+              to="/mood"
+              style={{ textDecoration: "none", color: "#2b3467" }}
+            >
+              Mood Tracker
+            </Link>
+          </Button>
+        ) : (
+          <LoginButton />
+        )}
       </Box>
     </React.Fragment>
   );

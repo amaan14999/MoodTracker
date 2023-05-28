@@ -12,18 +12,19 @@ import Welcome from "./components/Mood/Welcome";
 function App() {
   return (
     <React.Fragment>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Container maxWidth="lg">
-          <Navbar />
-          <BrowserRouter>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Container maxWidth="lg">
+            <Navbar />
+
             <Routes>
               <Route path="/" element={<Hero />} />
               <Route path="/mood" element={<Welcome />} />
             </Routes>
-          </BrowserRouter>
-        </Container>
-      </ThemeProvider>
+          </Container>
+        </ThemeProvider>
+      </BrowserRouter>
     </React.Fragment>
   );
 }
