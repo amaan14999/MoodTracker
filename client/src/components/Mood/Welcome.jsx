@@ -12,8 +12,6 @@ function Welcome() {
 
   console.log(user);
 
-  const { user } = useAuth0();
-
   return (
     <React.Fragment>
       <Box sx={theme.display}>
