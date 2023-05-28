@@ -16,7 +16,8 @@ function Welcome() {
     <React.Fragment>
       <Box sx={theme.display}>
         <Box sx={theme.moodPage.welcome}>
-          <Typography variant="h3">Hey, {user.name}!👋</Typography>
+          <Typography variant="h3">Hey, {user && user.name}!👋</Typography>{" "}
+          {/* Add conditional check */}
           <Box sx={{ marginTop: "1rem" }}>
             <Typography variant="subtitle">How was your day today?</Typography>
           </Box>
