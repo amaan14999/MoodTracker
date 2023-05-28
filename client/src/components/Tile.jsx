@@ -3,7 +3,10 @@ import { Modal, Button } from "antd";
 import { Box, Typography } from "@mui/material";
 import Modalweb from "./Mood/Modal";
 
+import { useTheme } from "@emotion/react";
+
 const Tile = ({ index }) => {
+  const theme = useTheme();
   const [color, setColor] = useState("#C9DBB2");
   const [hovered, setHovered] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
@@ -64,12 +67,12 @@ const Tile = ({ index }) => {
           <Modalweb closeModal={handleCloseModal} key="edit" />,
         ]}
       >
-        <Box>
+        <Box sx={theme.display.flexDisplayCol}>
           <Typography variant="h6" component="div">
-            dfaf
+            😄
           </Typography>
           <Typography variant="body1" component="div">
-            You said it was {} day
+            How is your mood now?
           </Typography>
         </Box>
       </Modal>
