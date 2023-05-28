@@ -2,6 +2,13 @@
 
 MoodKalender is a web application that allows users to track their moods on a daily basis. It provides a convenient way to add and analyze mood entries for each day, helping users gain insights into their emotional well-being and patterns over time and improve their mental health.
 
+
+![1](https://github.com/Charuhas10/MoodTracker/assets/72398218/28955162-f1d3-489a-bbd9-02687a9f414b)
+
+
+![2](https://github.com/Charuhas10/MoodTracker/assets/72398218/8d374834-98a7-4650-b25a-82131a0b186c)
+
+
 ## Features
 
 - Track Mood: Users can easily add and record their mood for each day, allowing them to keep a detailed log of their emotional state.
