@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import Button from "./Btn";
+import mood from "../assets/mood.jpg";
 
 function Mood() {
   const theme = useTheme();
@@ -13,19 +14,21 @@ function Mood() {
           <Typography
             variant="h3"
             textAlign="center"
-            style={{ color: "#2b3467", fontSize: "3rem", marginBottom: "1rem" }}
+            style={{ color: "#2b3467", fontSize: "3rem", marginBottom: "2rem" }}
           >
             Mood History.
           </Typography>
         </Box>
-        <Box
-          sx={{
+        <img
+          src={mood}
+          alt="mood text"
+          style={{
             width: "80%",
-            height: "400px",
-            backgroundColor: "#ccc",
+            height: "auto",
             marginBottom: "1.5rem",
+            borderRadius: "20px",
           }}
-        ></Box>
+        />
         <Box>
           <Typography
             variant="h5"

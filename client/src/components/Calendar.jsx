@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import calendar from "../assets/2808566.jpg";
 
 function Calendar() {
   const theme = useTheme();
@@ -18,19 +19,22 @@ function Calendar() {
         <Typography
           variant="h3"
           textAlign="center"
-          style={{ color: "#2b3467", fontSize: "3rem", marginBottom: "1rem" }}
+          style={{ color: "#2b3467", fontSize: "3rem", marginBottom: "3rem" }}
         >
-          Flow provides an array of features to explore and enjoy
+          Flow provides an array of features <br />
+          to explore and enjoy
         </Typography>
 
-        <Box
-          sx={{
+        <img
+          src={calendar}
+          alt="Add to your calendar"
+          style={{
             width: "80%",
-            height: "400px",
-            backgroundColor: "#ccc",
+            height: "auto",
             marginBottom: "1.5rem",
+            borderRadius: "20px",
           }}
-        ></Box>
+        />
         <br />
 
         <Typography
@@ -49,7 +53,7 @@ function Calendar() {
         <Typography
           variant="h3"
           textAlign="center"
-          style={{ color: "#70bfef", fontSize: "1.5rem", marginBottom: "1rem" }}
+          style={{ color: "#70bfef", fontSize: "1.5rem", marginBottom: "6rem" }}
         >
           With just a few clicks, adding your mood to the calendar becomes
           incredibly effortless
