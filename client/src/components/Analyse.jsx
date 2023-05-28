@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-
+import analyseimg from "../assets/4654.jpg";
 function Analyse() {
   const theme = useTheme();
   return (
@@ -20,13 +20,14 @@ function Analyse() {
             Analyse your mood.
           </Typography>
           <Box sx={{ textAlign: "center" }}>
-            <Box
-              sx={{
-                width: "800",
-                height: "400px",
-                margin: "0 auto",
-                background: "#ccc",
+            <img
+              src={analyseimg}
+              alt="analyse"
+              style={{
+                width: "80%",
+                height: "auto",
                 marginBottom: "1.5rem",
+                borderRadius: "20px",
               }}
             />
           </Box>
