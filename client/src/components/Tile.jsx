@@ -1,29 +1,12 @@
 import React, { useState } from "react";
+import { Modal, Button } from "antd";
+import { Box, Typography } from "@mui/material";
+import Modalweb from "./Mood/Modal";
 
 const Tile = ({ index }) => {
   const [color, setColor] = useState("#C9DBB2");
   const [hovered, setHovered] = useState(false);
-
-  const handleTileClick = () => {
-    const selectedMood = prompt("Select your mood:");
-
-    // Define the color mappings for different moods
-    const moodColors = {
-      happy: "#36a2eb",
-      good: "#4bc0c0",
-      alright: "#ffcd56",
-      lazy: "#ff9f40",
-      bad: "#ff6384",
-      // Add more moods and their respective colors here
-    };
-
-    // Check if the selected mood exists in the moodColors object
-    if (selectedMood in moodColors) {
-      setColor(moodColors[selectedMood]);
-    } else {
-      setColor("#C9DBB2"); // Set default color if mood is not recognized
-    }
-  };
+  const [modalVisible, setModalVisible] = useState(false);
 
   const handleMouseEnter = () => {
     setHovered(true);
@@ -41,15 +24,55 @@ const Tile = ({ index }) => {
     return tileDate;
   };
 
+  const handleTileClick = () => {
+    setModalVisible(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalVisible(false);
+  };
+
+  const handleOk = () => {
+    console.log("OK button clicked");
+    handleCloseModal();
+  };
+
+  const handleCancel = () => {
+    console.log("Cancel button clicked");
+    handleCloseModal();
+  };
+
   return (
     <div
       className="tile"
       style={{ backgroundColor: color }}
-      onClick={handleTileClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onClick={handleTileClick}
     >
       {hovered && <span className="date">{getDate(index)}</span>}
+      <Modal
+        title={getDate(index)}
+        visible={modalVisible}
+        onOk={handleOk}
+        okText="Edit Details"
+        onCancel={handleCancel}
+        footer={[
+          <Button key="cancel" onClick={handleCancel}>
+            Cancel
+          </Button>,
+          <Modalweb closeModal={handleCloseModal} key="edit" />,
+        ]}
+      >
+        <Box>
+          <Typography variant="h6" component="div">
+            dfaf
+          </Typography>
+          <Typography variant="body1" component="div">
+            You said it was {} day
+          </Typography>
+        </Box>
+      </Modal>
     </div>
   );
 };
