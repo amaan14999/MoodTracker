@@ -8,6 +8,9 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 function Welcome() {
   const theme = useTheme();
+  const { user } = useAuth0();
+
+  console.log(user);
 
   const { user } = useAuth0();
 
@@ -15,7 +18,7 @@ function Welcome() {
     <React.Fragment>
       <Box sx={theme.display}>
         <Box sx={theme.moodPage.welcome}>
-          <Typography variant="h3">Hey, Himanshu!👋</Typography>
+          <Typography variant="h3">Hey, {user.name}!👋</Typography>
           <Box sx={{ marginTop: "1rem" }}>
             <Typography variant="subtitle">How was your day today?</Typography>
           </Box>

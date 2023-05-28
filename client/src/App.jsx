@@ -8,7 +8,6 @@ import "./App.css";
 import Navbar from "./components/navbar";
 import Hero from "./components/Hero";
 import Welcome from "./components/Mood/Welcome";
-
 function App() {
   return (
     <React.Fragment>
